@@ -1,0 +1,30 @@
+{
+    "empresas" : [
+        {
+            "nome": "LH Informatica LTDA - ME",
+            "telefone": 67996124946,
+            "endereco": {
+                "rua" : "Av. Mato Grosso do Sul",
+                "numero": "231",
+                "bairro": "Qualquer coisa",
+                "cidade": "Chapadão do Sul",
+                "UF": "MS",
+                "cep": 79550000
+            }
+        },
+        {
+            "nome": "Vt Parana Supermercado",
+            "telefone": 67996124946,
+            "endereco": {
+                "rua" : "Av. Mato Grosso do Sul",
+                "numero": "231",
+                "bairro": "Qualquer coisa",
+                "cidade": "Chapadão do Sul",
+                "UF": "MS",
+                "cep": 79550000
+            }
+        }
+
+    ]
+    
+}
