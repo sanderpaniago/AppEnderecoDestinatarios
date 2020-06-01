@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gera Cupom endereço</title>
-    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -15,7 +15,7 @@
     <section>
         <div class="container">
             <div class="user signupEnd">
-                <div class="imgBx"><img src="./src/img/56620.jpg" alt=""></div>
+                <div class="imgBx"><img src="./img/56620.jpg" alt=""></div>
                 <div class="formBx" id="printTeste">
                     <form>
                         <h2>pesquise aqui as empresas ja cadastradas</h2>
@@ -31,26 +31,26 @@
 
             <div class="user getEndereco">
                 <div class="formBx">
-                    <form>
+                    <form action="/" method="POST">
                         <h2>Cadastre endereço de destino.</h2>
                         <input type="text" name="empresa" id="getempresa" placeholder="Empresa de destino">
                         <input type="tel" name="telefone" id="telefone" placeholder="Telefone para contato">
                         <div class="formEnd">
                             <input type="text" name="endereco" id="endereco" placeholder="Endereço">
-                            <input type="number" name="numeroCasa" id="numeroCasa" placeholder="N°">
+                            <input type="number" name="numeroEmp" id="numeroEmp" placeholder="N°">
                         </div>
                         <input type="text" name="bairro" id="bairro" placeholder="Bairro">
                         <div class="formEnd">
                             <input type="text" name="cidade" id="cidade" placeholder="Cidade">
-                            <input type="text" name="UF" id="uf" placeholder="UF">
+                            <input type="text" name="uf" id="uf" placeholder="UF">
                         </div>
                         <input type="number" name="cep" id="cep" placeholder="CEP">
-                        <input type="button" id="btnCadastro" value="Cadastrar">
+                        <input type="submit" id="btnCadastro" value="Cadastrar">
 
                         <p class="empCadastradas">acesse as empresas ja cadastradas <a href="#" onclick="toggleForm()">Clique aqui.</a></p>
                     </form>
                 </div>
-                <div class="imgBx"><img src="./src/img/56620 [Convertido].png" alt=""></div>
+                <div class="imgBx"><img src="./img/56620 [Convertido].png" alt=""></div>
             </div>
         </div>
     </section>
@@ -60,8 +60,10 @@
             let container = document.querySelector('.container')
             container.classList.toggle('active')
         }
+
+
     </script>
 
-    <script src="./src/js/index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

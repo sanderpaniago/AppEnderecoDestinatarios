@@ -89,7 +89,7 @@ section .container .user .formBx form .formEnd input[placeholder="Cidade"], sect
     width: 73%;
 }
 
-section .container .user .formBx form .formEnd input[placeholder="UF"], section .container .user .formBx form .formEnd input[name="numeroCasa"] {
+section .container .user .formBx form .formEnd input[placeholder="UF"], section .container .user .formBx form .formEnd input[name="numeroEmp"] {
     width: 25%;
     text-transform: uppercase;
 }

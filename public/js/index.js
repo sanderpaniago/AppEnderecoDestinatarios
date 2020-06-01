@@ -1,11 +1,11 @@
 function getNomeEmpresas() { 
     
     let nomeEmpresa = []
-    $.get("http://localhost:5000/src/DB/dados.json", (data, status) => {
-        data.empresas.map((item) => {
-            nomeEmpresa.push(item.nome)
+    $.get("http://localhost:5000/show", (data, status) => {
+        data.map((item) => {
+            nomeEmpresa.push(item)
         })
-    })
+    })   
 
     return nomeEmpresa
 
@@ -20,12 +20,12 @@ function autoCompleta() {
 }
 
 function getToDadosEmpresa(nomeEmpresa) {
-    
-    $.get("http://localhost:5000/src/DB/dados.json", (data, status) => {
-        let result = data.empresas.filter((empresa => {
+    $.get(`http://localhost:5000/empresa/${nomeEmpresa}`, (data, status) => {
+        let result = data.filter((empresa => {
             return empresa.nome === nomeEmpresa
-        }))
+        })) 
         
+        console.log(result)
         criaPaginaPrint(result)
     })
 }
