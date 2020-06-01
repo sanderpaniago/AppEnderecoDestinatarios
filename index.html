@@ -19,7 +19,11 @@
                 <div class="formBx" id="printTeste">
                     <form>
                         <h2>pesquise aqui as empresas ja cadastradas</h2>
-                        <input type="text" name="empresa" id="empresa" oninput="autoCompleta()" placeholder="Empresa de destino">
+                        <div class="pesquisa">
+                            <input type="text" name="empresa" id="empresa" oninput="autoCompleta()" placeholder="Empresa de destino">
+                            <a href=""><span></span></a>
+                        </div>
+                    
                     <div class="buttuns">   
                         <input type="button" id="submitCadastro" onclick="getToDadosEmpresa($('#empresa').val())" value="Gerar Ticket">
                         <input type="button" id="updateCadastro"  value="Atualiza Cadastro">

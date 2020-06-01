@@ -54,7 +54,7 @@ MongoClient.connect(uri, (err, client) =>{
                 numero: req.body.numeroEmp,
                 bairro: req.body.bairro,
                 cidade: req.body.cidade,
-                UF: req.body.uf,
+                uf: req.body.uf,
                 cep: req.body.cep
             }
         }

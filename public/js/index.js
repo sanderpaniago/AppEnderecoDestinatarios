@@ -123,8 +123,8 @@ function  criaPaginaPrint(result) {
                             <li>${empresa.endereco.numero}</li>
                             <li>${empresa.endereco.bairro}</li>
                             <li>${empresa.endereco.cidade}</li>
-                            <li>${empresa.endereco.uf}</li>
-                            <li>${empresa.endereco.cep}</li>
+                            <li>${empresa.endereco.uf}</li> 
+                            <li>${empresa.endereco.cep}</li> 
                         </ul>
                     </div>
 
