@@ -21,7 +21,7 @@
                         <h2>pesquise aqui as empresas ja cadastradas</h2>
                         <div class="pesquisa">
                             <input type="text" name="empresa" id="empresa" oninput="autoCompleta()" placeholder="Empresa de destino">
-                            <a href=""><span></span></a>
+                            <a id="abrirModal" onclick="getEmpresasCadastradas()" href="#"><span></span></a>
                         </div>
                     
                     <div class="buttuns">   
@@ -32,7 +32,30 @@
                     </form>
                 </div>
             </div>
+            <div id="modal" class="hide">
+                <div class="modal-bg"></div>
+                <div class="modal-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Empresa</th>
+                                <th>Telefone</th>
+                            </tr>
+                        </thead>
+                        <tbody id='tabelaEmpresa'>
+                            
+                        </tbody>
+                    </table>
 
+
+
+
+
+
+
+                    <a class="modal-close">&#215;</a>
+                </div>
+            </div>
             <div class="user getEndereco">
                 <div class="formBx">
                     <form action="/" method="POST">

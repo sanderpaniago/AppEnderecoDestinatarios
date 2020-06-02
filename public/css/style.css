@@ -234,3 +234,73 @@ section .container.active .signupEnd .imgBx {
     padding: 3px 2px;
 
 }
+
+
+/* estilização do modal */
+
+.hide {
+    display: none;
+}
+
+.modal-bg {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: gainsboro;
+    opacity: 0.7;
+}
+
+.modal-content {
+    position: fixed;
+    margin: 0 auto;
+    width: 100vh;
+    height: 50vw;
+    top: 50px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: #f6f6f6;
+    /* box-shadow: 0px 0px 10px black; */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.modal-content table {
+    width: 100%;
+    
+}
+
+.modal-content table thead, .modal-content table tbody {
+   
+    width: 100%;
+    
+}
+
+.modal-content table thead tr, .modal-content table tbody tr {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 10px;
+}
+
+.modal-content table thead tr th, .modal-content table tbody tr td {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+
+.modal-close {
+    font-size: 2rem;
+    line-height: 1;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #AAAAAA;
+    font-family: 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
+}
+

@@ -31,8 +31,9 @@ MongoClient.connect(uri, (err, client) =>{
         emp.find().toArray((err, result) => {
             if (err) throw err
             result.forEach((data) => {
-                teste.push(data.nome)
+                teste.push(data)
             })
+            console.log(teste[0].nome)
             res.json(teste)
         })
     })

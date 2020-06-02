@@ -3,9 +3,10 @@ function getNomeEmpresas() {
     let nomeEmpresa = []
     $.get("http://localhost:5000/show", (data, status) => {
         data.map((item) => {
-            nomeEmpresa.push(item)
+            nomeEmpresa.push(item.nome)
         })
     })   
+    console.log(nomeEmpresa)
 
     return nomeEmpresa
 
@@ -150,4 +151,46 @@ function  criaPaginaPrint(result) {
     newWin.document.write(templatePagPrintToDadosHTML)
     newWin.document.close()
     newWin.print()
+}
+
+// modal 
+
+var btAbrirModal = $("#abrirModal");
+var modal = $("#modal");
+var modalClose = $("#modal .modal-close");
+var modalBackground = $("#modal .modal-bg");
+
+btAbrirModal.click(function () {
+    modal.fadeIn(500);
+});
+
+modalClose.click(function () {
+    modal.fadeOut(500);
+});
+
+modalBackground.click(function () {
+    modal.fadeOut(500);
+})
+
+function getEmpresasCadastradas() {
+    const minhaTabela = $()
+
+    
+    
+    let infoEmpresa = []
+    
+    $.get("http://localhost:5000/show", (data, status) => {
+        data.map((item) => {
+            $("#tabelaEmpresa").append(`<tr>
+                <td><a href="#">${item.nome}</a></td>
+                <td><a href"#">${item.telefone}</a></td>
+            </tr>`)
+            infoEmpresa.push({
+                nome: item.nome,
+                telefone: item.telefone
+            })
+        })
+        
+    })   
+
 }
