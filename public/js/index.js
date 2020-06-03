@@ -1,3 +1,5 @@
+getEmpresasCadastradas()
+
 function getNomeEmpresas() { 
     
     let nomeEmpresa = []
@@ -26,7 +28,7 @@ function getToDadosEmpresa(nomeEmpresa) {
             return empresa.nome === nomeEmpresa
         })) 
         
-        console.log(result)
+        
         criaPaginaPrint(result)
     })
 }
@@ -172,25 +174,67 @@ modalBackground.click(function () {
     modal.fadeOut(500);
 })
 
-function getEmpresasCadastradas() {
-    const minhaTabela = $()
-
-    
-    
-    let infoEmpresa = []
-    
+function getEmpresasCadastradas() {  
     $.get("http://localhost:5000/show", (data, status) => {
         data.map((item) => {
             $("#tabelaEmpresa").append(`<tr>
-                <td><a href="#">${item.nome}</a></td>
-                <td><a href"#">${item.telefone}</a></td>
+                <td id="nomeEmpresa">${item.nome}</td>
+                <td>${item.telefone}</td>
             </tr>`)
-            infoEmpresa.push({
-                nome: item.nome,
-                telefone: item.telefone
-            })
         })
         
     })   
 
 }
+$(document).ready( function () {
+    $("#tabelaEmpresa").on('click',"td", function(e) {
+        const valorSelectTd = ($(this).closest('tr').find('td').first().text().trim())
+
+        getToDadosEmpresa(valorSelectTd)
+        modal.fadeOut(500);
+    })
+})
+const ufname = []
+function getSelectUf(event) {
+
+    $.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados', (data, status) => {
+        
+        for(const uf of data){
+            ufname.push({
+                id: uf.id,
+                name: uf.sigla
+            })
+            $("#uf").append(`<option value=${uf.sigla}>${uf.sigla}</option>`)
+        }
+
+        abilitaCampo()
+        
+    })
+}
+
+const cityNome = []
+
+function getSelectCity(idUf) {
+    $.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${idUf}/municipios`, (estados, status) => {
+        for(const estado of estados) {
+            cityNome.push({
+                id: estado.id,
+                nome: estado.nome
+            })
+            $("#cidade").append(`<option value="${estado.nome}">${estado.nome}</option>`)
+        }
+    })
+}
+
+function abilitaCampo() {
+    if ($('[name=uf]').val() === $('select option[value=""]').val()) {
+        document.querySelector('#cidade').disabled = true
+    } else {
+        document.querySelector('#cidade').disabled = false
+        getSelectCity($('[name=uf]').val())
+    }
+}
+
+getSelectUf()
+
+$('[name=uf]').on('change', abilitaCampo)

@@ -21,7 +21,7 @@
                         <h2>pesquise aqui as empresas ja cadastradas</h2>
                         <div class="pesquisa">
                             <input type="text" name="empresa" id="empresa" oninput="autoCompleta()" placeholder="Empresa de destino">
-                            <a id="abrirModal" onclick="getEmpresasCadastradas()" href="#"><span></span></a>
+                            <a id="abrirModal" href="#"><span></span></a>
                         </div>
                     
                     <div class="buttuns">   
@@ -68,8 +68,12 @@
                         </div>
                         <input type="text" name="bairro" id="bairro" placeholder="Bairro">
                         <div class="formEnd">
-                            <input type="text" name="cidade" id="cidade" placeholder="Cidade">
-                            <input type="text" name="uf" id="uf" placeholder="UF">
+                            <select name="uf" id="uf">
+                                <option name="teste" value="">UF</option>
+                            </select>
+                            <select name="cidade" id="cidade" disabled>
+                                <option  value="">Cidade</option>
+                            </select>
                         </div>
                         <input type="number" name="cep" id="cep" placeholder="CEP">
                         <input type="submit" id="btnCadastro" value="Cadastrar">

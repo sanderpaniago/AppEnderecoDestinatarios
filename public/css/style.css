@@ -85,11 +85,11 @@ section .container .user .formBx form .formEnd input {
     align-content: space-between;
 }
 
-section .container .user .formBx form .formEnd input[placeholder="Cidade"], section .container .user .formBx form .formEnd input[name="endereco"] {
+section .container .user .formBx form .formEnd select[name="cidade"], section .container .user .formBx form .formEnd input[id="endereco"] {
     width: 73%;
 }
 
-section .container .user .formBx form .formEnd input[placeholder="UF"], section .container .user .formBx form .formEnd input[name="numeroEmp"] {
+section .container .user .formBx form .formEnd select[name="uf"], section .container .user .formBx form .formEnd input[id="numeroEmp"] {
     width: 25%;
     text-transform: uppercase;
 }
@@ -105,7 +105,7 @@ section .container .user .formBx form h2 {
     color: #555;
 }
 
-section .container .user .formBx form input {
+section .container .user .formBx form input, section .container .user .formBx form select{
     position: relative;
     width: 100%;
     padding: 10px;
@@ -273,7 +273,6 @@ section .container.active .signupEnd .imgBx {
 }
 
 .modal-content table thead, .modal-content table tbody {
-   
     width: 100%;
     
 }
@@ -302,5 +301,14 @@ section .container.active .signupEnd .imgBx {
     cursor: pointer;
     color: #AAAAAA;
     font-family: 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
+}
+
+#tabelaEmpresa tr:nth-child(2n+1) td{
+    background-color: #d5d5df;
+    padding: 8px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
